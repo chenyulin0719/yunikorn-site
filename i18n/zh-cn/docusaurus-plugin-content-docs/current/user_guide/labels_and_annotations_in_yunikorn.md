@@ -27,8 +27,8 @@ YuniKorn 利用了几个 Kubernetes 标签和注释来支持各种功能：
 ### YuniKorn 的标签
 |        名称          |          说明                 |
 | ------------------- | ---------------------------- |
-| `applicationId`     | 将这个 Pod 与一个应用程序联系起来。<br/>应用ID的优先级由以下因素决定：注释 `yunikorn.apache.org/app-id` > 标签 `applicationId` > 标签 `SparkLabelAppID`。|
-| `queue`             | 选择这个应用程序应该被安排在哪个 YuniKorn 队列中。如果有放置策略，这可能被忽略。<br/>队列的优先级由以下因素决定：注释 `yunikorn.apache.org/queue` >标签 `queue` >默认。|
+| `applicationId`     | 将这个 Pod 与一个应用程序联系起来。<br/><br/>应用ID的优先级由以下因素决定：注释 `yunikorn.apache.org/app-id` > 标签 `applicationId` > 标签 `SparkLabelAppID`。|
+| `queue`             | 选择这个应用程序应该被安排在哪个 YuniKorn 队列中。如果有放置策略，这可能被忽略。<br/><br/>队列的优先级由以下因素决定：注释 `yunikorn.apache.org/queue` >标签 `queue` >默认。|
 | `SparkLabelAppID `  | 如果标签 `applicationId` 和注解 `yunikorn.apache.org/app-id` 未设置，Spark Operator 使用的指定 `applicationId` 的替代方法。|
 | `disableStateAware` | 如果存在，则禁用该 pod 的 YuniKorn 状态感知调度策略。由 YuniKorn 接纳控制器内部设置。|
 | `placeholder`       | 设置该 pod 是否代表分组调度的占位符。由 YuniKorn 内部设置。|
@@ -38,8 +38,8 @@ YuniKorn 利用了几个 Kubernetes 标签和注释来支持各种功能：
 
 |                Name            |     Description    |
 | ------------------------------ | ------------------ |
-|             `app-id`           | 将这个pod与一个应用程序联系起来。<br/>应用ID的优先级由以下因素决定：注释 `yunikorn.apache.org/app-id` > 标签 `applicationId` > 标签 `SparkLabelAppID`。|
-|            `queue`            | 选择这个应用程序应该被安排在YuniKorn队列中。如果有放置策略，这可能被忽略。<br/>队列的优先级由以下因素决定：注释 `yunikorn.apache.org/queue` >标签 `queue` >默认。|
+|             `app-id`           | 将这个pod与一个应用程序联系起来。<br/><br/>应用ID的优先级由以下因素决定：注释 `yunikorn.apache.org/app-id` > 标签 `applicationId` > 标签 `SparkLabelAppID`。|
+|            `queue`            | 选择这个应用程序应该被安排在YuniKorn队列中。如果有放置策略，这可能被忽略。<br/><br/>队列的优先级由以下因素决定：注释 `yunikorn.apache.org/queue` >标签 `queue` >默认。|
 |       `task-group-name`       | 设置这个pod所属的任务组名称，以便进行分组调度。它必须列在`task-groups`中。|
 |         `task-groups`         | 定义了这个应用程序的任务组集合，用于分组调度。一个应用程序中的每个pod必须定义所有的任务组。|
 | `schedulingPolicyParameters`  | 任意的键值对，用于定制调度策略，如分组调度。 |
